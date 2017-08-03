@@ -1,7 +1,11 @@
 ﻿FROM mono:latest
 
-RUN mkdir -p release
-COPY bin/Debug/* /release/
+
+ADD . /WebApp
+WORKDIR /WebApp
+
+RUN mono nuget.exe restore
+RUN xbuild /p:Configuration=Release
 
 EXPOSE 8080
-CMD [ "mono", "release/WebApp.exe"]
+CMD [ "mono", "/WebApp/WebApp/bin/Release/WebApp.exe"]
