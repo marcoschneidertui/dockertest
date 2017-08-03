@@ -7,5 +7,4 @@ WORKDIR /WebApp
 # RUN mono nuget.exe restore
 RUN xbuild /p:Configuration=Release
 
-EXPOSE 8080
 CMD [ "mono", "/WebApp/WebApp/bin/Release/WebApp.exe"]
