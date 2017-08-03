@@ -4,7 +4,7 @@
 ADD . /WebApp
 WORKDIR /WebApp
 
-RUN mono nuget.exe restore
+# RUN mono nuget.exe restore
 RUN xbuild /p:Configuration=Release
 
 EXPOSE 8080
