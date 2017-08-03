@@ -21,6 +21,7 @@ namespace WebApp
             for(int i=0; i < 100; i++)
             {
                 Console.WriteLine($"Now writing line {i+1}");
+                System.Threading.Thread.Sleep(500);
             }
         }
 
